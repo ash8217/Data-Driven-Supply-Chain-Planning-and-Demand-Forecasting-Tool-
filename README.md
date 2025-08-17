@@ -1,81 +1,67 @@
 # Supply Chain Optimization with Demand Forecasting
 
 ## Project Overview
-This project aims to optimize the supply chain by predicting weekly sales for various stores using a machine learning approach. We used RandomForestRegressor to model the sales data based on features such as store characteristics, promotions, and external factors. This project provides insights into the drivers of sales and helps in making data-driven decisions for optimizing inventory and supply chain operations.
+This project focuses on **optimizing the supply chain** by predicting **weekly sales** for retail stores using a machine learning approach.  
+We employed a **RandomForestRegressor** model trained on store attributes, promotions, and external factors to generate predictions.  
+The analysis provides insights into sales drivers and supports **data-driven decisions** for inventory and supply chain operations.
 
 ## Objective
-The objective of this project is to predict the `Weekly_Sales` for retail stores using historical data, including features such as promotions, store type, holidays, and seasonal factors. By developing a machine learning model, we aim to:
-
-1. Provide accurate sales predictions for inventory management.
-2. Analyze the importance of different features in predicting sales.
-3. Visualize sales trends and key metrics to derive insights.
+The project aims to forecast **Weekly_Sales** using historical data with features such as promotions, store type, holidays, and seasonal effects.  
+Key goals include:
+- Delivering accurate sales predictions for **inventory management**.  
+- Evaluating feature importance to identify sales drivers.  
+- Visualizing sales patterns and performance metrics to extract insights.  
 
 ## Dataset
-The project uses four datasets:
-
-1. **Features.csv**: Contains additional information about the stores, such as promotional events and weather conditions.
-2. **Stores.csv**: Contains store-related information, including store type and assortment type.
-3. **Train.csv**: Historical sales data for training the model, including `Weekly_Sales` for each store.
-4. **Test.csv**: Test data for evaluating the model.
+The project uses four datasets:  
+- **Features.csv** – Promotional events and weather data.  
+- **Stores.csv** – Store information, including type and assortment.  
+- **Train.csv** – Historical weekly sales data for model training.  
+- **Test.csv** – Data for evaluating model performance.  
 
 ## Step-by-Step Process
 
 ### Step 1: Data Loading
-Loaded the datasets using Pandas and merged them to create a unified dataset containing all the relevant information for each store and date.
+- Loaded datasets with **Pandas**.  
+- Merged features, stores, and train datasets into a unified dataset with all store-level information.  
 
 ### Step 2: Data Preprocessing
-- **Merging Datasets**: Merged the `features`, `stores`, and `train` datasets.
-- **Handling Missing Values**: Filled missing values for numeric columns with their median and for categorical columns with their mode.
-- **Feature Engineering**: Extracted features such as `Year`, `Month`, `Week`, `Day`, and `DayOfWeek` from the `Date` column for better analysis.
-- **Encoding Categorical Variables**: One-hot encoded categorical variables to make them suitable for machine learning models.
+- **Merging Datasets** – Combined features, stores, and train data.  
+- **Handling Missing Values** – Numeric columns filled with median, categorical with mode.  
+- **Feature Engineering** – Extracted Year, Month, Week, Day, and DayOfWeek from the Date column.  
+- **Encoding Categorical Variables** – Applied one-hot encoding to prepare data for ML models.  
 
 ### Step 3: Model Training
-Used the **RandomForestRegressor** from scikit-learn to train the model on the processed data. The model was trained to predict the `Weekly_Sales` based on various features.
+- Trained **RandomForestRegressor** to predict `Weekly_Sales` using processed features.  
 
 ### Step 4: Model Evaluation
-The model was evaluated using:
-- **Mean Squared Error (MSE)**: To measure the average squared difference between actual and predicted sales.
-- **R-squared (R²)**: To measure the proportion of variance explained by the model.
+- **Mean Squared Error (MSE):** Measured average squared error between actual and predicted sales.  
+- **R-squared (R²):** Evaluated variance explained by the model.  
 
 ### Step 5: Feature Importance Analysis
-We plotted the top 10 features that contributed most to the model's predictions, providing insights into the factors driving sales.
+- Plotted **top 10 features** impacting predictions, highlighting the strongest sales drivers.  
 
 ### Step 6: Visualizations
-Used **Plotly** to enhance visualizations for deeper insights into sales trends and feature impacts. The visualizations include:
-- **Sales Trend Over Time**: A line plot showing `Weekly_Sales` over the entire timeframe, which helps understand seasonal patterns and trends.
-- **Sales Distribution by Store Type**: A boxplot depicting the distribution of sales by different store types to identify performance variations.
+Using **Plotly** and other libraries, created:  
+- **Sales Trend Over Time** – Line plot of Weekly_Sales to observe seasonal trends.  
+- **Sales Distribution by Store Type** – Boxplot comparing sales across store types.  
 
 ## Tools and Technologies
-- **Python**: Core language used for analysis and modeling.
-- **Pandas**: For data manipulation and preprocessing.
-- **Scikit-Learn**: For machine learning modeling and evaluation.
-- **Seaborn and Plotly**: For data visualization.
-- **Matplotlib**: For plotting basic visualizations.
+- **Python** – Core language for analysis and modeling.  
+- **Pandas** – Data manipulation and preprocessing.  
+- **Scikit-Learn** – Machine learning model training and evaluation.  
+- **Seaborn & Plotly** – Visualization and interactive insights.  
+- **Matplotlib** – Standard plotting support.  
 
 ## Installation
-To run this project, you need to install the following dependencies:
-
+Install dependencies:  
 ```bash
 pip install pandas numpy scikit-learn matplotlib seaborn plotly
-```
-
-## Usage
-1. Clone the repository.
-2. Ensure you have the required datasets in the appropriate directory.
-3. Run the Python script:
-
-```bash
 python Supply_Chain_Opt.py
-```
+Results
 
-## Results
-- **Mean Squared Error (MSE)**: The error metric used to measure the average squared difference between predicted and actual sales.
-- **R-squared (R²)**: Indicates how well the features explain the variance in sales.
+Mean Squared Error (MSE): Evaluated prediction error.
 
-The model achieved reasonable accuracy in predicting weekly sales, with the feature importance analysis highlighting key drivers of sales such as promotions, store type, and seasonal factors.
+R-squared (R²): Assessed variance explained by features.
 
-## Future Work
-- **Hyperparameter Tuning**: Improve the model by tuning hyperparameters of the RandomForestRegressor.
-- **Additional Features**: Incorporate external data like economic indicators or regional events to improve model accuracy.
-- **Optimization**: Use optimization techniques to enhance supply chain management based on sales predictions.
-
+Achieved strong predictive performance, with promotions, store type, and seasonality identified as the most important drivers of sales.
