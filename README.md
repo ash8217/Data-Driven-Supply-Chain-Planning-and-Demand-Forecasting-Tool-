@@ -53,15 +53,3 @@ Using **Plotly** and other libraries, created:
 - **Seaborn & Plotly** – Visualization and interactive insights.  
 - **Matplotlib** – Standard plotting support.  
 
-## Installation
-Install dependencies:  
-```bash
-pip install pandas numpy scikit-learn matplotlib seaborn plotly
-python Supply_Chain_Opt.py
-Results
-
-Mean Squared Error (MSE): Evaluated prediction error.
-
-R-squared (R²): Assessed variance explained by features.
-
-Achieved strong predictive performance, with promotions, store type, and seasonality identified as the most important drivers of sales.
